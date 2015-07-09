@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>TwitList App</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="assets/app.css"/>
+</head>
+<body layout="row" ng-app="twitterListApp">
+
+<md-sidenav class="md-sidenav-left md-whiteframe-z2"
+            md-component-id="left"
+            md-is-locked-open="$mdMedia('gt-md')">
+    <!-- Angular Material does not like it if ng-controller tag is included as part of md-sidenav element-->
+    <div ng-controller="ListSideNavController as vm">
+        <md-toolbar class="md-whiteframe-z3 sidenav-left">
+            <h1>My Lists</h1>
+        </md-toolbar>
+
+        <md-list>
+            <md-list-item ng-repeat="name in vm.listNames" class="md-3-line list-item-border md-whiteframe-z2">
+                <div class="md-list-item-text">
+                    <h4>{{name.name}}</h4>
+
+                    <p>{{name.description}}</p>
+
+                    <div layout="row" layout-align="end center">
+                        <span class="list-members">{{name.members}} Members</span>
+                    </div>
+                </div>
+            </md-list-item>
+        </md-list>
+    </div>
+</md-sidenav>
+
+<section flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+
+    <md-toolbar layout="row" class="md-whiteframe-z2">
+        <div flex="50">
+            <div class="md-toolbar-tools content-heading">
+                <h1>Twitter List App</h1>
+            </div>
+        </div>
+        <div flex>
+            <div class="md-toolbar-tools content-span-group">
+                <span class="md-body-2 content-span-item">dhrubac</span>
+                <span class="md-body-2 content-span-item">compose</span>
+                <span class="md-body-2 content-span-item">logout</span>
+            </div>
+        </div>
+    </md-toolbar>
+
+    <md-content flex id="content">
+        <div flex layout="row" layout-margin layout-padding layout-align="space-around start"
+             class="content-wrapper" ng-controller="ListMainContentController as vm">
+            <md-card class="card-item md-whiteframe-z3">
+                <md-card-content>
+                    <md-list>
+                        <md-subheader class="md-no-sticky md-primary">{{vm.getTwitListTitle(1)}}</md-subheader>
+                        <md-list-item ng-repeat="item in vm.twitListPerStream[0]">
+                            <div class="md-list-item-text">
+                                <p>{{item.text}}</p>
+                            </div>
+                            <md-divider></md-divider>
+                        </md-list-item>
+                    </md-list>
+                </md-card-content>
+            </md-card>
+            <md-card class="card-item md-whiteframe-z3">
+                <md-card-content>
+                    <md-list>
+                        <md-subheader class="md-no-sticky md-primary">{{vm.getTwitListTitle(2)}}</md-subheader>
+                        <md-list-item ng-repeat="item in vm.twitListPerStream[1]">
+                            <div class="md-list-item-text">
+                                <p>{{item.text}}</p>
+                            </div>
+                            <md-divider></md-divider>
+                        </md-list-item>
+                    </md-list>
+                </md-card-content>
+            </md-card>
+            <md-card class="card-item md-whiteframe-z3">
+                <md-card-content>
+                    <md-list>
+                        <md-subheader class="md-no-sticky md-primary">{{vm.getTwitListTitle(3)}}</md-subheader>
+                        <md-list-item ng-repeat="item in vm.twitListPerStream[2]">
+                            <div class="md-list-item-text">
+                                <p>{{item.text}}</p>
+                            </div>
+                            <md-divider></md-divider>
+                        </md-list-item>
+                    </md-list>
+                </md-card-content>
+            </md-card>
+        </div>
+    </md-content>
+</section>
+
+<script src="./bower_components/angular/angular.js"></script>
+<script src="./bower_components/angular-animate/angular-animate.js"></script>
+<script src="./bower_components/angular-aria/angular-aria.js"></script>
+<script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+<script type="text/javascript" src="bower_components/lodash/lodash.js"></script>
+
+<script type="text/javascript" src="src/config/appModule.js"></script>
+<script type="text/javascript" src="src/config/appConfig.js"></script>
+
+<script type="text/javascript" src="src/lists/twitterListService.js"></script>
+<script type="text/javascript" src="src/lists/listSideNavController.js"></script>
+<script type="text/javascript" src="src/lists/listMainContentController.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size:14px;
+  height:100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Toolbar area */
+md-toolbar.sidenav-left {
+  justify-content: center;
+  align-items: center;
+}
+
+md-toolbar.sidenav-left > h1 {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+md-toolbar .content-heading {
+  justify-content: center;
+}
+
+md-toolbar > div .content-span-group {
+  justify-content: flex-end;
+}
+
+md-toolbar > div .content-span-item {
+  margin-left: 20px;
+}
+
+/* Sidenav List Item */
+
+.list-item-border {
+  margin: 10px;
+  border: 1px solid #B2DFDB;
+}
+
+span.list-members {
+  color: #FFAB91;
+}
+
+/* Primary content area */
+md-content > div.content-wrapper {
+  flex-wrap: wrap;
+}
+
+md-content .card-item {
+  width: 350px;
+}
+
+/* Utils */
+

@@ -1,0 +1,18 @@
+{
+  "name": "angular-material-basic",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A starter project for AngularJS Material",
+  "repository": "https://github.com/dhrubach/angular-material-basic",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.3.1",
+    "http-server": "^0.6.1",
+    "live-server": "^0.7.1"
+  },
+  "scripts": {
+    "postinstall": "bower update",
+    "prestart": "npm update",
+    "start": "node ./app.js"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "angular-material-basic",
+  "description": "A starter project for AngularJS Material",
+  "version": "0.0.1",
+  "homepage": "https://github.com/dhrubach/angular-material-basic",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.4.x",
+    "angular-animate": "^1.4.x",
+    "angular-aria": "^1.4.x",
+    "angular-material": "^0.10.0",
+    "lodash": "~3.10.0"
+  },
+  "devDependencies": {
+    "angular-material": "^0.10.0"
+  }
+}
